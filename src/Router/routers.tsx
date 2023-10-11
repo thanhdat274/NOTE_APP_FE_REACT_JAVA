@@ -6,12 +6,17 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { PrivateRouter } from './PrivateRouter';
 import ListNote from '@/components/Note/ListNote';
+import ForgetPassword from '@/components/auth/ForgetPassword';
+import ResetPassWord from '@/components/auth/ResetPassWord';
 
 const Router = () => {
   return (
     <Routes>
       <Route path="/signup" element={<Signup />} />
       <Route path="/signin" element={<Signin />} />
+      <Route path="/forgetPass" element={<ForgetPassword />} />
+      <Route path="/reset-password" element={<ResetPassWord />} />
+
       <Route
         path="/"
         element={

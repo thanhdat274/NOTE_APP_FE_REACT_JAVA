@@ -21,11 +21,16 @@ const Signin = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     try {
       const { data: user } = await signin(data);
-      toastr.success('Đăng nhập tài khoản thành công, chuyển sang trang chủ sau 2s');
-      setCookie('user', JSON.stringify(user), { path: '/', maxAge: 30 * 24 * 60 * 60 });
-      setTimeout(() => {
-        navigate('/');
-      }, 2000);
+
+      if (user?.code != '00') {
+        toastr.error('Tên tài khoản hoặc mật khẩu không đúng!');
+      } else {
+        toastr.success('Đăng nhập tài khoản thành công, chuyển sang trang chủ sau 2s');
+        setCookie('user', JSON.stringify(user), { path: '/', maxAge: 30 * 24 * 60 * 60 });
+        setTimeout(() => {
+          navigate('/');
+        }, 2000);
+      }
     } catch (error) {
       toastr.error('Tên tài khoản hoặc mật khẩu không đúng!');
     }
