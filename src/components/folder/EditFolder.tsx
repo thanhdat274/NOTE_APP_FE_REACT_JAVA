@@ -20,7 +20,7 @@ type Props = {
 
 const EditFokder = ({ resetDataListFolder, dataFolderOne, handleResetPage, setModal2Open }: Props) => {
   const { cookies } = useUserContext();
-  const useData = cookies?.user?.data;
+  const useData = cookies?.user;
   const {
     register,
     handleSubmit,

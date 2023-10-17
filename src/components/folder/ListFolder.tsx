@@ -16,7 +16,7 @@ const ListFolder = () => {
   const [listFolders, setListFolders] = useState<FolderType[]>([]);
   const [folderOne, setFolderOne] = useState<FolderType[]>([]);
   const { cookies } = useUserContext();
-  const useData = cookies?.user?.data;
+  const useData = cookies?.user;
   console.log(useData);
 
   const [modal1Open, setModal1Open] = useState(false);

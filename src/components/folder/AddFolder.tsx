@@ -19,7 +19,7 @@ type FromValues = {
 
 const AddFolder = ({ resetDataListFolder, handleResetPage, setModal2Open }: Props) => {
   const { cookies } = useUserContext();
-const useData = cookies?.user?.data;
+  const useData = cookies?.user;
   const {
     register,
     handleSubmit,

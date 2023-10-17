@@ -25,7 +25,7 @@ type Props = {
 const EditNote = ({ dataNoteOne, resetDataNotes, handleResetPage, setModal2Open }: Props) => {
   const [rawHTML, setRawHTML] = useState('');
   const { cookies } = useUserContext();
-  const useData = cookies?.user?.data;
+  const useData = cookies?.user;
   const { id } = useParams();
   const {
     register,

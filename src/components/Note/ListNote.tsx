@@ -17,7 +17,7 @@ const ListNote = () => {
   const [noteOneList, setNoteOneList] = useState<NoteType[]>([]);
   const { id } = useParams();
   const { cookies } = useUserContext();
-  const useData = cookies?.user?.data;
+  const useData = cookies?.user;
   const [modal1Open, setModal1Open] = useState(false);
   const [modal2Open, setModal2Open] = useState(false);
   const [resetPage, setResetPage] = useState(0);
